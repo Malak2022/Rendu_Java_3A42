@@ -1,9 +1,10 @@
 package tn.esprit.gestionzoo.entities;
+import tn.esprit.gestionzoo.exceptions.*;
 
 public class Zoo {
-    final static int NBR_CAGES = 25;
+    final static int NBR_CAGES = 3; //Just to test the Exception
     final static int NBR_MAX_AQUATICS = 10;
-    private int nbrAnimaux = 0;
+    private int nbrAnimeaux = 0;
     private int nbrAquatics = 0;
     Animal[] animals;
     Aquatic[] aquaticAnimals;
@@ -29,11 +30,11 @@ public class Zoo {
     }
 
     public int getNbrAnimeaux() {
-        return nbrAnimaux;
+        return nbrAnimeaux;
     }
 
     public void setNbrAnimeaux(int nbrAnimeaux) {
-        this.nbrAnimaux = nbrAnimeaux;
+        this.nbrAnimeaux = nbrAnimeaux;
     }
 
     public int getNbrAquatics() {
@@ -72,23 +73,27 @@ public class Zoo {
         System.out.println("Name: " + name);
         System.out.println("City: " + city);
         System.out.println("List of Animals:\n");
-        for(int i=0; i<nbrAnimaux; i++){
+        for(int i=0; i<nbrAnimeaux; i++){
             System.out.println("Animal n°" + (i+1) + ": " + animals[i].toString());
         }
     }
 
     @Override
     public String toString() {
-        return "Name: " + name + "\nCity " + city + "\nNumber Animals: " + nbrAnimaux;
+        return "Name: " + name + "\nCity " + city + "\nNumber Animals: " + nbrAnimeaux;
     }
 
-    public boolean addAnimal(Animal animal){
-        if(!isZooFull() && (searchAnimal(animal) == -1)) {
-            animals[nbrAnimaux] = animal;
-            nbrAnimaux++;
-            return true;
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        if(animal.getAge()> 0) {
+            if (nbrAnimeaux < NBR_CAGES) {
+                animals[nbrAnimeaux] = animal;
+                nbrAnimeaux++;
+                System.out.println("Cages left: " + (NBR_CAGES - nbrAnimeaux));
+            } else {
+                throw new ZooFullException("Zoo is full.");
+            }
         }else{
-            return false;
+            throw new InvalidAgeException("Negative age.");
         }
     }
 
@@ -96,16 +101,16 @@ public class Zoo {
         if(searchAnimal(animal) == -1){
             return false;
         }else{
-            for(int i=searchAnimal(animal); i<nbrAnimaux; i++){
+            for(int i=searchAnimal(animal); i<nbrAnimeaux; i++){
                 animals[i] = animals[i+1];
-                nbrAnimaux--;
+                nbrAnimeaux--;
             }
             return true;
         }
     }
 
     public int searchAnimal(Animal animal){
-        for(int i=0; i<nbrAnimaux; i++){
+        for(int i=0; i<nbrAnimeaux; i++){
             if(animals[i].getName() == animal.getName()){
                 return i;
             }
@@ -114,7 +119,7 @@ public class Zoo {
     }
 
     public boolean isZooFull(){
-        if(NBR_CAGES == nbrAnimaux){
+        if(NBR_CAGES == nbrAnimeaux){
             return true;
         }else{
             return false;
@@ -122,7 +127,7 @@ public class Zoo {
     }
 
     static Zoo comparerZoo(Zoo z1, Zoo z2){
-        if(z1.nbrAnimaux < z2.nbrAnimaux)
+        if(z1.nbrAnimeaux < z2.nbrAnimeaux)
             return z2;
         else
             return z1;

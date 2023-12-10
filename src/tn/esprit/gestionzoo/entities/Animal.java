@@ -58,4 +58,13 @@ public sealed class Animal permits Aquatic, Terrestrial {
     public String toString() {
         return "Animal{ Family:" + family + ", Name: " + name + ", Age: " + age + ", isMammal: " + isMammal + "}";
     }
+    public void displayAnimal(){
+        System.out.println("Family: " + family);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        if(isMammal)
+            System.out.println("isMammal: Yes");
+        else
+            System.out.println("isMammal: No");
+    }
 }
