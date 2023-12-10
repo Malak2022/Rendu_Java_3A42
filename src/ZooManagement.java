@@ -1,24 +1,18 @@
 public class ZooManagement {
 
     public static void main(String[] args) {
-        //PROSIT 2
         Animal lion = new Animal();
         lion.name = "lion";
-        lion.age = 5;
+        lion.age = 8;
         lion.family = "Chats";
         lion.isMammal = true;
 
-        Zoo myZoo = new Zoo();
-        myZoo.name = "MyPark";
-        myZoo.city = "Tunis";
-        myZoo.nbrCages = 25;
-        myZoo.animals = new Animal[25];
+        Zoo myZoo = new Zoo("TuniPark", "Tunis");
+        Zoo notMyZoo = new Zoo("Park", "Ariana");
 
 
-        Animal dog = new Animal("Chien", "Rex", 3, true);
+        Animal dog = new Animal("Chien", "Fox", 2, true);
 
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
 
         System.out.println(myZoo.addAnimal(lion));
         System.out.println(myZoo.addAnimal(dog));
@@ -26,14 +20,28 @@ public class ZooManagement {
         myZoo.displayAnimals();
 
         System.out.println(myZoo.searchAnimal(dog));
-        Animal dog1 = new Animal("Chien", "Fox", 2, true);
+        Animal dog1 = new Animal("Chien", "Rex", 2, true);
         System.out.println(myZoo.searchAnimal(dog1));
 
-        System.out.println(myZoo.removeAnimal(dog));
+        //   System.out.println(myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
+
+
+        System.out.println(myZoo);
+
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(dog);
+        myZoo.addAnimal(dog1);
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(lion));
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(dog1));
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(dog));
+        myZoo.displayAnimals();
+
+
 
     }
 
 }
-
-
