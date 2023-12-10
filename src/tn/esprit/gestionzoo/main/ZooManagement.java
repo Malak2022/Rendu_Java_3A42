@@ -1,50 +1,27 @@
 package tn.esprit.gestionzoo.main;
-
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
+import java.util.Scanner;
 
 public class ZooManagement {
-
-    public static void main(String[] args) {
-        Animal lion = new Animal();
-        lion.setName("lion");
-        lion.setAge(5);
-        lion.setFamily("Chats");
-        lion.setMammal(true);
-
-        Zoo myZoo = new Zoo("TuniPark", "Tunis");
-        Zoo notMyZoo = new Zoo("Park", "Ariena");
+    public static void main(String[] args){
 
 
-        Animal dog = new Animal("Chien", "Fox", 2, true);
+        Zoo myZoo = new Zoo("TuniZoo", "Tunis");
+        Aquatic A = new Aquatic("Poisson", "Nemo", 5, true, "Ocean");
+        Aquatic D = new Dolphin("Dauphins", "Dauphy", 10, true, "Ocean", 18.6f);
+        Aquatic P1 = new Penguin("Penguin", "Peg", 2, true, "Pole", 13.4f);
+        Aquatic P2 = new Penguin("Penguin", "Pegy", 5, false, "Pole", 7.4f);
+        Aquatic P3 = new Penguin("Penguin", "Pegou", 8, false, "Pole", 8f);
 
-
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));
-
-        myZoo.displayAnimals();
-
-        System.out.println(myZoo.searchAnimal(dog));
-        Animal dog1 = new Animal("Chien", "Rex", 2, true);
-        System.out.println(myZoo.searchAnimal(dog1));
-
-//           System.out.println(myZoo.removeAnimal(dog));
-        myZoo.displayAnimals();
-
-
-        System.out.println(myZoo);
-
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(dog);
-        myZoo.addAnimal(dog1);
-        myZoo.displayAnimals();
-
-
-        myZoo.setName("GreenPark");
-        Zoo notMyZoo1 = Zoo.comparerZoo(myZoo, notMyZoo);
-        System.out.println(notMyZoo1);
-
-
+        myZoo.addAquaticAnimal(A);
+        myZoo.addAquaticAnimal(D);
+        myZoo.addAquaticAnimal(P1);
+        myZoo.addAquaticAnimal(P2);
+        myZoo.addAquaticAnimal(P3);
+        myZoo.instruction27();
+        System.out.println(myZoo.maxPenguinSwimmingDepth());
+        myZoo.displayNumberOfAquaticsByType();
+        System.out.println(P1.equals(P2));
+        System.out.println(P1.equals(P3));
     }
-
 }
