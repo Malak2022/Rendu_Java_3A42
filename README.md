@@ -1,5 +1,5 @@
 # Rendu_Java_3A42
-Les rendus des prosits Java
+Dans ce prosit vous allez trouver tous les rendus des prosits Java
 # Le Plan
  - [Description](#description)
  - [Structure du Projet](#structure-du-projet)
