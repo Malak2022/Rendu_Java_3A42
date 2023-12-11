@@ -18,7 +18,7 @@ On peut voir que ce Repository porte sur plusieus thèmes:
      
        *Structure de ZooManagement* 
 	   ── src/tn/esprit/gestionzoo
-      |
+      
 		├── entities
 		|   ├── Animal.java
 		|   ├── Aquatic.java
@@ -40,20 +40,21 @@ On peut voir que ce Repository porte sur plusieus thèmes:
 
       *Structure de EmployeManagement*
       src
-		|   ├── AffectationHashMap.java
-		|   ├── Departement.java
-		|   ├── DepartementHashSet.java
-		|   ├── Employee.java
-		|   ├── Etudiant.java
-		|   ├── EtudiantManagement.java
-		|   ├── IDEpartement.java
-		|   ├── IGestion.java
-		|   ├── Main.java
-		|   ├── Management.java
-		|   └── SocieteArrayList.java
-		├── Main
-		└── Main List 
-      ├── MainMap
+		   ├── AffectationHashMap.java
+		   ├── Departement.java
+		   ├── DepartementHashSet.java
+		   ├── Employee.java
+		   ├── Etudiant.java
+		   ├── MainList.java
+		   ├── IDEpartement.java
+		   ├── IGestion.java
+		   ├── Main.java
+		   ├── MainList.java
+  		   ├── MainMap.java
+		   ├── Management.java
+		   └── SocieteArrayList.java
+		
+     
 
    ## Insatallation
    - Java Development Kit (JDK) version 17 ☕️
