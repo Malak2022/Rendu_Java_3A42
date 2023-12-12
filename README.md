@@ -16,7 +16,7 @@ On peut voir que ce Repository porte sur plusieus thèmes:
 - <font color="green"> Prosit-2 --> Prosit-8 </font> Chaque branche contient le code concernant le developpement du projet ZooManagement 
 - <font color="green"> Un ancien DS </font> Contient le code qu'on a implémenté en classe
 - <font color="green"> Prosit-9 --> Prosit-12 </font> Chaque branche contient le code concernant le developpement du projet EmployeManagement
-- - <font color="green"> Prosit-13 </font> Chaque branche contient le code concernant le developpement du projet TeacherManagement
+- <font color="green"> Prosit-13 </font> Chaque branche contient le code concernant le developpement du projet TeacherManagement
      
        *Structure de ZooManagement* 
 	   ── src/tn/esprit/gestionzoo
@@ -41,7 +41,7 @@ On peut voir que ce Repository porte sur plusieus thèmes:
                     └── ZooManagement.java
 
       *Structure de EmployeManagement*
-      src
+      ── src
 		   ├── AffectationHashMap.java
 		   ├── Departement.java
 		   ├── DepartementHashSet.java
